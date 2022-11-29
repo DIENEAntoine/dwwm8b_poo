@@ -1,0 +1,7 @@
+# Activation de la réecriture du moteur du serveur apache
+
+RewriteEngine on
+
+    # Si la racine du dossier de l'application est chargée à partir de la barre d'url,
+    # Effectuer une Redirection vers la page public
+    RewriteRule ^(.*)$ public/index.php 

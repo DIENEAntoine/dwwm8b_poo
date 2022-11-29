@@ -1,0 +1,20 @@
+# Activation de la réécriture du moteur du serveur Apache
+RewriteEngine On
+
+    # Cette ligne permet de manière explicite, de dire au serveur Apache que le point d'entrée de l'application est l'index.php. 
+    Sachant que cet index se trouve dans le dossier dans lequel se trouve ce fichier htaccess.
+    DirectoryIndex index.php
+
+
+    # Cette ligne permet de définir le dossier public comme point d'entrée de l'application lorsqu'on tente d'y accéder en passant pas l'url.
+    RewriteBase /
+
+
+    # Ces lignes permettent de poser une condition : 
+        - Si l'information se trouvant dans la barre d'url après le nom de domaine n'est ni un fichier
+        - Ni un dossier 
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # On effectue une redirection vers l'index.php en partant de "RewriteBase"
+    RewriteRule ^(.*)* /index.php

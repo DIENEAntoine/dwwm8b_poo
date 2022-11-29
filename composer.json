@@ -1,0 +1,27 @@
+{
+    "name": "diene/dwwm8b_poo",
+    "description": "Apprendre la poo en php",
+    "type": "project",
+    "license": "dwwm8b",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "DIENEAntoine",
+            "email": "diene1antoine@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "scripts": {
+        "serve" : [
+            "php -S localhost:8000 -d display_errors=1 -t public/"
+        ]
+    },
+    "config":{
+        "process-timeout": 0
+    }
+}
