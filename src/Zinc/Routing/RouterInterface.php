@@ -1,7 +1,8 @@
 <?php
-namespace App\Routing;
+namespace App\Zinc\Routing;
 
-    class Router implements RouterInterface
+
+    interface RouterInterface
     {
         /**
          * Cette methode permet de 
@@ -12,11 +13,7 @@ namespace App\Routing;
          * @param array $controllers
          * @return void
          */
-        public function addRoutes(array $controllers) : void
-        {
-
-        }
-
+        public function addRoutes(array $controllers) : void;
 
         /**
          * Cette methode du routeyr lui permet :
@@ -27,8 +24,5 @@ namespace App\Routing;
          *
          * @return array|null
          */ 
-        public function run() : ?array
-        {
-            dd('test');
-        }
+        public function run() : ?array;
     }

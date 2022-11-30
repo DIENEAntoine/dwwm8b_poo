@@ -1,8 +1,10 @@
 <?php
+declare(strict_types=1);
+
 namespace App;
 
-use App\Trait\ChangeTimeZone;
-use App\HttpKernel\HttpKernel;
+use App\Zinc\Trait\ChangeTimeZone;
+use App\Zinc\HttpKernel\HttpKernel;
 use Psr\Container\ContainerInterface;
 
 /**

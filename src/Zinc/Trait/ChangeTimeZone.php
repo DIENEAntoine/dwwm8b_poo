@@ -1,5 +1,6 @@
 <?php
-namespace App\Trait;
+namespace App\Zinc\Trait;
+
     
     trait ChangeTimeZone
     {
