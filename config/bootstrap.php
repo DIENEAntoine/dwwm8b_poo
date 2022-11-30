@@ -11,4 +11,5 @@
     $dotenv->load();
 
     // Chargement du conteneur de dépendances
+    $container = require __DIR__ . "/di/container.php";
 

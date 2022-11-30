@@ -10,17 +10,22 @@
      *          - Chargement des constantes
      *          - Chargement des variables d'environnement
      *          - Chargement du conteneur de dépendances
-     *          - Creer une nouvelle instance du noyeau (Kernel)
+     *      - Créer une nouvelle instance du noyeau (Kernel)
      *          - En lui passant le conteneur en paramétres
-     *          - Demander au noyau de soumettre la requête du client au système
-     *          - Récuperer la reponse correspondante
-     *          - Envoyer cette réponse au client
+     *      - Demander au noyau de soumettre la requête du client au système
+     *      - Récuperer la reponse correspondante
+     *      - Envoyer cette réponse au client
      * ------------------------------------------------------------------------
      */
+    
 
-     // bootstarpping de l'application
-     require __DIR__ . "/../config/bootstrap.php";
+    // bootstarpping de l'application
+    require __DIR__ . "/../config/bootstrap.php";
+
+    // Créer une nouvelle instance du noyeau (Kernel) en lui passant le conteneur en paramètres
+    $kernel = new App\Kernel($container);
 
 
-
-    dd($_ENV); 
+    // Demander au noyau de soumettre la requête du client au système
+    // Récuperer la reponse correspondante
+    $response = $kernel->handleRequest();
