@@ -18,7 +18,8 @@
     "require": {
         "vlucas/phpdotenv": "5.5.x-dev",
         "php-di/php-di": "dev-master",
-        "symfony/http-foundation": "6.3.x-dev"
+        "symfony/http-foundation": "6.3.x-dev",
+        "twig/twig": "3.x-dev"
     },
     "scripts": {
         "serve" : [

@@ -21,8 +21,18 @@ use Symfony\Component\HttpFoundation\Response;
          */
         private ContainerInterface $container;
 
+
+        /**
+         * Cette propriété représente le noyau dans lui-même
+         *
+         * @var HttpKernel
+         */
+        private static HttpKernel $kernel;
+
+
         public function __construct(ContainerInterface $container)
         {
+            self::$kernel = $this;
             $this->container = $container;
         }
 
@@ -74,8 +84,18 @@ use Symfony\Component\HttpFoundation\Response;
                 $parameters = $router_response['parameters'];   
                 return $this->container->call([$controller, $method], [$parameters]);
             }
-            
+
             return $this->container->call([$controller, $method]);
+        }
+
+        public static function getKernel() : HttpKernel
+        {
+            return self::$kernel;
+        }
+
+        public function getContainer() : ContainerInterface
+        {
+            return $this->container;
         }
 
     }

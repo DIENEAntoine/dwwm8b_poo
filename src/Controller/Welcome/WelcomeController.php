@@ -5,20 +5,20 @@ namespace App\Controller\Welcome;
 
 use App\Zinc\Routing\Route;
 use Symfony\Component\HttpFoundation\Response;
+use App\Zinc\AbstractController\AbstractController;
 
-    class WelcomeController
+    class WelcomeController extends AbstractController
     {
+
         #[Route('/', name:"welcome.index", methods: ['GET'])]
         public function index() : Response
-        {
-            $content = <<<HTML
-            <h1>Page d'acceuil</h1>
-HTML;
-            return $response = new Response(
-                $content,
-                Response::HTTP_OK,
-                ['content-type' => 'text/html']
-            );            
+        { 
+            $nom = 'Jeudi aprém';
+            $jours = ["Lundi", "Mardi", "mercredi", "Jeudi", "Vendredi"];
+            return $this->render("index.html.twig", [ 
+            "nom" => $nom,
+            "jours" => $jours
+        ]);
         }
 
         #[Route('/edit/{id}', name:"edit", methods: ['GET'])]
