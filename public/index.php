@@ -29,3 +29,6 @@ declare(strict_types=1);
     // Demander au noyau de soumettre la requête du client au système
     // Récuperer la reponse correspondante
     $response = $kernel->handleRequest();
+
+    // Le contrôleur frontal envoie la réponse au client
+    $response->send();
